@@ -19,37 +19,33 @@ input.onButtonPressed(Button.AB, function () {
     datalogger.setColumnTitles(
     "x",
     "y",
-    "T"
+    "L"
     )
 })
 input.onButtonPressed(Button.B, function () {
     logging = false
     basic.showIcon(IconNames.No)
 })
-let T = 0
+let L = 0
 let y = 0
 let x = 0
 let logging = false
-radio.setGroup(9)
 logging = false
 basic.showIcon(IconNames.No)
 datalogger.setColumnTitles(
 "x",
 "y",
-"T"
+"L"
 )
 loops.everyInterval(100, function () {
     if (logging) {
         x = input.acceleration(Dimension.X)
         y = input.acceleration(Dimension.Y)
-        T = input.temperature()
+        L = input.lightLevel()
         datalogger.log(
         datalogger.createCV("x", x),
         datalogger.createCV("y", y),
-        datalogger.createCV("T", T)
+        datalogger.createCV("L", L)
         )
-        radio.sendValue("x", x)
-        radio.sendValue("y", y)
-        radio.sendValue("T", T)
     }
 })

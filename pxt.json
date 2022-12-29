@@ -1,5 +1,5 @@
 {
-    "name": "Mapa_de_temperaturas medidor",
+    "name": "Mapa_de_luminosidad",
     "description": "",
     "dependencies": {
         "core": "*",
